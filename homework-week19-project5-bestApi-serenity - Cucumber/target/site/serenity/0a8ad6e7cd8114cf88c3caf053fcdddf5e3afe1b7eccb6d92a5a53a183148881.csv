@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Testing different request on the product","I get all categories from application","SUCCESS","2022-06-20T13:22:57.156+01:00[Europe/London]","0.0","0.11"
+"Testing different request on the product","I create categories from application","SUCCESS","2022-06-20T13:22:57.293+01:00[Europe/London]","0.0","0.09"
+"Testing different request on the product","I update categories from application","SUCCESS","2022-06-20T13:22:57.422+01:00[Europe/London]","0.0","0.1"
+"Testing different request on the product","I delete categories from application","SUCCESS","2022-06-20T13:22:57.581+01:00[Europe/London]","0.0","0.24"

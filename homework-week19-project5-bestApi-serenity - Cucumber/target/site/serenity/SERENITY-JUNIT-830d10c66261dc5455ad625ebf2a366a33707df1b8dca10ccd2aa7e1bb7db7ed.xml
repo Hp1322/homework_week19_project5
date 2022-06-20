@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="3" name="com.localhost.swaggerinfo.StoreDataDrivenTest" skipped="0" tests="4" time="0.1" timestamp="2022-06-20T13:23:00.870+01:00[Europe/London]"><testcase classname="com.localhost.swaggerinfo.StoreDataDrivenTest" name="Delete the store and verify if the store is deleted!"><failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;404&gt;.&#10;" type="java.lang.AssertionError">1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;404&gt;.
+</failure><system-err>1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;404&gt;.
+&#13;
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:636)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:122)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:130)&#13;
+io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)&#13;
+com.localhost.swaggerinfo.StoreDataDrivenTest.deleteStoreAndVerify(StoreDataDrivenTest.java:72)&#13;
+</system-err></testcase><testcase classname="com.localhost.swaggerinfo.StoreDataDrivenTest" name="Verify if the store was added to the stock"><failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;404&gt;.&#10;" type="java.lang.AssertionError">1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;404&gt;.
+</failure><system-err>1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;404&gt;.
+&#13;
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:636)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:122)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:130)&#13;
+io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)&#13;
+com.localhost.swaggerinfo.StoreSteps.getstoreInfoByID(StoreSteps.java:42)&#13;
+com.localhost.swaggerinfo.StoreDataDrivenTest.verifyStoreAdded(StoreDataDrivenTest.java:50)&#13;
+</system-err></testcase><testcase classname="com.localhost.swaggerinfo.StoreDataDrivenTest" name="Update the store information and verify updated information"><failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;404&gt;.&#10;" type="java.lang.AssertionError">1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;404&gt;.
+</failure><system-err>1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;404&gt;.
+&#13;
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:636)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:122)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:130)&#13;
+io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)&#13;
+com.localhost.swaggerinfo.StoreDataDrivenTest.updateStoreInformation(StoreDataDrivenTest.java:64)&#13;
+</system-err></testcase><testcase classname="com.localhost.swaggerinfo.StoreDataDrivenTest" name="This will create a new store"/></testsuite>

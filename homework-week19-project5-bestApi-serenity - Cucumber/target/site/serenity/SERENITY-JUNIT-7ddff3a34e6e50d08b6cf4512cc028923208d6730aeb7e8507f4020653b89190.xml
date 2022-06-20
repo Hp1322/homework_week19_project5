@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="2" name="com.localhost.swaggerinfo.ServiceDataDrivenTest" skipped="0" tests="4" time="0.32" timestamp="2022-06-20T13:23:00.501+01:00[Europe/London]"><testcase classname="com.localhost.swaggerinfo.ServiceDataDrivenTest" name="Verify if the service was added to the stock"><failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;404&gt;.&#10;" type="java.lang.AssertionError">1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;404&gt;.
+</failure><system-err>1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;404&gt;.
+&#13;
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:636)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:122)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:130)&#13;
+io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)&#13;
+com.localhost.swaggerinfo.ServicesSteps.getserviceInfoByID(ServicesSteps.java:32)&#13;
+com.localhost.swaggerinfo.ServiceDataDrivenTest.verifyServiceAdded(ServiceDataDrivenTest.java:39)&#13;
+</system-err></testcase><testcase classname="com.localhost.swaggerinfo.ServiceDataDrivenTest" name="This will create a new Service"/><testcase classname="com.localhost.swaggerinfo.ServiceDataDrivenTest" name="Delete the service and verify if the service is deleted!"/><testcase classname="com.localhost.swaggerinfo.ServiceDataDrivenTest" name="Update the service information and verify updated services"><failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;404&gt;.&#10;" type="java.lang.AssertionError">1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;404&gt;.
+</failure><system-err>1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;404&gt;.
+&#13;
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:636)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:122)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:130)&#13;
+io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)&#13;
+com.localhost.swaggerinfo.ServicesSteps.getserviceInfoByID(ServicesSteps.java:32)&#13;
+com.localhost.swaggerinfo.ServiceDataDrivenTest.updateServiceInformation(ServiceDataDrivenTest.java:50)&#13;
+</system-err></testcase></testsuite>

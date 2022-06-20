@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.localhost.swaggerinfo.ProductDataDrivenTest" time="0" tests="5" errors="5" skipped="0" failures="0">
+  <properties>
+    <property name="idea.version" value="2021.3.2"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
+    <property name="java.vm.version" value="25.121-b13"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\harsh\IdeaProjects\homework-week19-project5-bestApi-serenity - Cucumber"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="GB"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\harsh\IdeaProjects\homework-week19-project5-bestApi-serenity - Cucumber"/>
+    <property name="java.runtime.version" value="1.8.0_121-b13"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_121\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\harsh\AppData\Local\Temp\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\plugins\maven\lib\maven-event-listener.jar"/>
+    <property name="classworlds.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\plugins\maven\lib\maven3\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_121\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_121\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk1.8.0_121\bin;C:\Program Files\Git\cmd;C:\Program Files\Apache\apache-maven-3.8.5\bin;C:\Program Files\nodejs\;C:\Users\harsh\AppData\Local\Microsoft\WindowsApps;C:\Users\harsh\AppData\Roaming\npm;."/>
+    <property name="maven.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\plugins\maven\lib\maven3/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\harsh"/>
+    <property name="user.timezone" value="Europe/London"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="harsh"/>
+    <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\plugins\maven\lib\maven3\boot\plexus-classworlds.license;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\lib\idea_rt.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_121\jre"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2021.3.2 clean verify serenity:aggregate"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_121"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_121\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_121\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\plugins\maven\lib\maven3"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase name="getAllProducts" classname="com.localhost.swaggerinfo.ProductDataDrivenTest" time="0">
+    <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
+	at com.localhost.swaggerinfo.ProductDataDrivenTest.getAllProducts(ProductDataDrivenTest.java:72)
+</error>
+    <system-err><![CDATA[43744 [main] INFO net.serenitybdd.core.Serenity - 
+        __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
+  _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
+ (_)_____| |   | | |  _| \___ \ | |   | |_) / _ \ \___ \\___ \|  _| | | | |
+  _|_____| |   | | | |___ ___) || |   |  __/ ___ \ ___) |___) | |___| |_| |
+ (_)     | |   |_| |_____|____/ |_|   |_| /_/   \_\____/|____/|_____|____/ 
+        /_/                                                                
+
+TEST PASSED: Update the category information and verify updated categories
+----------------------------------------------------------------------------
+43749 [pool-191-thread-3] INFO net.thucydides.core.reports.json.JSONTestOutcomeReporter - Generating JSON report for This will create a new category to file C:\Users\harsh\IdeaProjects\homework-week19-project5-bestApi-serenity - Cucumber\target\site\serenity\8c54d619b4af6e5c7faa2f368731db38a0753b61f044962e6bfb295c0796551e.json (using temp file C:\Users\harsh\IdeaProjects\homework-week19-project5-bestApi-serenity - Cucumber\target\site\serenity\8c54d619b4af6e5c7faa2f368731db38a0753b61f044962e6bfb295c0796551e.jsonda58a7de-7eac-438e-83bc-f8039acab739)
+43749 [pool-191-thread-2] INFO net.thucydides.core.reports.json.JSONTestOutcomeReporter - Generating JSON report for Verify if the category was added to the stock to file C:\Users\harsh\IdeaProjects\homework-week19-project5-bestApi-serenity - Cucumber\target\site\serenity\bbf0934b188df7807199a477001d289d4a71554334c0ab9ed157310519142e18.json (using temp file C:\Users\harsh\IdeaProjects\homework-week19-project5-bestApi-serenity - Cucumber\target\site\serenity\bbf0934b188df7807199a477001d289d4a71554334c0ab9ed157310519142e18.json145bb030-dcfe-4772-a3e8-2aaf9a1a33b9)
+43749 [pool-191-thread-1] INFO net.thucydides.core.reports.json.JSONTestOutcomeReporter - Generating JSON report for Delete the category and verify if the category is deleted! to file C:\Users\harsh\IdeaProjects\homework-week19-project5-bestApi-serenity - Cucumber\target\site\serenity\e48792b49565f3d67544c519ad85033bbe4d05259f765f40f1613132c41b2df7.json (using temp file C:\Users\harsh\IdeaProjects\homework-week19-project5-bestApi-serenity - Cucumber\target\site\serenity\e48792b49565f3d67544c519ad85033bbe4d05259f765f40f1613132c41b2df7.json3f186c09-ab19-40ae-91be-cc3a4a7ebb24)
+43749 [pool-191-thread-4] INFO net.thucydides.core.reports.json.JSONTestOutcomeReporter - Generating JSON report for Update the category information and verify updated categories to file C:\Users\harsh\IdeaProjects\homework-week19-project5-bestApi-serenity - Cucumber\target\site\serenity\270a78d78ffa531092340534925892dcbec8eec7d9bc392875c9370effe9b32f.json (using temp file C:\Users\harsh\IdeaProjects\homework-week19-project5-bestApi-serenity - Cucumber\target\site\serenity\270a78d78ffa531092340534925892dcbec8eec7d9bc392875c9370effe9b32f.jsonfebe5fa4-a383-4d50-a195-82c6250f5f66)
+43764 [pool-192-thread-1] INFO net.thucydides.core.reports.html.HtmlAcceptanceTestReporter - GENERATING HTML REPORT FOR Categories data driven test:deleteCategoryAndVerify in e48792b49565f3d67544c519ad85033bbe4d05259f765f40f1613132c41b2df7.html in directory target\site\serenity  
+43766 [pool-192-thread-4] INFO net.thucydides.core.reports.html.HtmlAcceptanceTestReporter - GENERATING HTML REPORT FOR Categories data driven test:updateCategoryInformation in 270a78d78ffa531092340534925892dcbec8eec7d9bc392875c9370effe9b32f.html in directory target\site\serenity  
+43780 [pool-192-thread-3] INFO net.thucydides.core.reports.html.HtmlAcceptanceTestReporter - GENERATING HTML REPORT FOR Categories data driven test:createMultipleCategory in 8c54d619b4af6e5c7faa2f368731db38a0753b61f044962e6bfb295c0796551e.html in directory target\site\serenity  
+43780 [pool-192-thread-2] INFO net.thucydides.core.reports.html.HtmlAcceptanceTestReporter - GENERATING HTML REPORT FOR Categories data driven test:verifyCategoryAdded in bbf0934b188df7807199a477001d289d4a71554334c0ab9ed157310519142e18.html in directory target\site\serenity  
+]]></system-err>
+  </testcase>
+  <testcase name="verifyProductAdded" classname="com.localhost.swaggerinfo.ProductDataDrivenTest" time="0">
+    <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
+	at com.localhost.swaggerinfo.ProductDataDrivenTest.verifyProductAdded(ProductDataDrivenTest.java:48)
+</error>
+  </testcase>
+  <testcase name="createMultipleProducts" classname="com.localhost.swaggerinfo.ProductDataDrivenTest" time="0">
+    <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
+	at com.localhost.swaggerinfo.ProductDataDrivenTest.createMultipleProducts(ProductDataDrivenTest.java:38)
+</error>
+  </testcase>
+  <testcase name="updateProductInformation" classname="com.localhost.swaggerinfo.ProductDataDrivenTest" time="0">
+    <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
+	at com.localhost.swaggerinfo.ProductDataDrivenTest.updateProductInformation(ProductDataDrivenTest.java:58)
+</error>
+  </testcase>
+  <testcase name="deleteProductAndVerify" classname="com.localhost.swaggerinfo.ProductDataDrivenTest" time="0">
+    <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
+	at com.localhost.swaggerinfo.ProductDataDrivenTest.deleteProductAndVerify(ProductDataDrivenTest.java:66)
+</error>
+  </testcase>
+</testsuite>

@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Store data driven test","Delete the store and verify if the store is deleted!","FAILURE","2022-06-20T13:23:00.870+01:00[Europe/London]","0.0","0.02"
+"Store data driven test","Verify if the store was added to the stock","FAILURE","2022-06-20T13:23:00.888+01:00[Europe/London]","0.0","0.02"
+"Store data driven test","Update the store information and verify updated information","FAILURE","2022-06-20T13:23:00.907+01:00[Europe/London]","0.0","0.03"

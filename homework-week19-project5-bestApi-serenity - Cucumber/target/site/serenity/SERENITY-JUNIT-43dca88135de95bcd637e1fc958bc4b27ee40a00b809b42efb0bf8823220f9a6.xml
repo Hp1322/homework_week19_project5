@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Testing different request on the store" skipped="0" tests="5" time="0.45" timestamp="2022-06-20T13:22:58.912+01:00[Europe/London]"><testcase name="I get all stores from application"/><testcase name="I create store from application"/><testcase name="I update store from application"/><testcase name="I delete store from application"/><testcase name="I verify following data response"><failure message="1 expectation failed.&#10;JSON path total doesn't match.&#10;Expected: &lt;1568&gt;&#10;  Actual: 1569&#10;" type="java.lang.AssertionError">1 expectation failed.
+JSON path total doesn't match.
+Expected: &lt;1568&gt;
+  Actual: 1569
+</failure><system-err>1 expectation failed.
+JSON path total doesn't match.
+Expected: &lt;1568&gt;
+  Actual: 1569
+&#13;
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:636)&#13;
+io.restassured.internal.ResponseSpecificationImpl.content(ResponseSpecificationImpl.groovy:265)&#13;
+io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:248)&#13;
+io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:268)&#13;
+com.localhost.cucumber.steps.StoreStepdefs.verifyTheIfTheTotalIsEqualTo(StoreStepdefs.java:93)&#13;
+✽.Then Verify the if the total is equal to 1561(store.feature:29)&#13;
+</system-err></testcase></testsuite>

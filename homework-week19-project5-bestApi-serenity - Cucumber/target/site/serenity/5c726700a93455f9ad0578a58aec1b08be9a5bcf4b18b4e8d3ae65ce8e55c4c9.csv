@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Service data driven test","Verify if the service was added to the stock","FAILURE","2022-06-20T13:23:00.501+01:00[Europe/London]","0.0","0.08"
+"Service data driven test","This will create a new Service","SUCCESS","2022-06-20T13:23:00.594+01:00[Europe/London]","0.0","0.08"
+"Service data driven test","Delete the service and verify if the service is deleted!","SUCCESS","2022-06-20T13:23:00.675+01:00[Europe/London]","0.0","0.09"
+"Service data driven test","Update the service information and verify updated services","FAILURE","2022-06-20T13:23:00.770+01:00[Europe/London]","0.0","0.07"

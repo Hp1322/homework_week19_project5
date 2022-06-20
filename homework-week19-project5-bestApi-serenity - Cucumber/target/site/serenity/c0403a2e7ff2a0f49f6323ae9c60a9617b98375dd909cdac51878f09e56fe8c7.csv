@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Service data driven test","Verify if the service was added to the stock","FAILURE","2022-06-20T13:23:00.501+01:00[Europe/London]","0.0","0.08"
+"Service data driven test","Update the service information and verify updated services","FAILURE","2022-06-20T13:23:00.770+01:00[Europe/London]","0.0","0.07"

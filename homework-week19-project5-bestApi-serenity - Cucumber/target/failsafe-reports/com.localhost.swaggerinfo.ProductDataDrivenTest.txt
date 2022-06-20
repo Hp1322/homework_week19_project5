@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: com.localhost.swaggerinfo.ProductDataDrivenTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0 sec <<< FAILURE! - in com.localhost.swaggerinfo.ProductDataDrivenTest
+getAllProducts(com.localhost.swaggerinfo.ProductDataDrivenTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at com.localhost.swaggerinfo.ProductDataDrivenTest.getAllProducts(ProductDataDrivenTest.java:72)
+
+verifyProductAdded(com.localhost.swaggerinfo.ProductDataDrivenTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at com.localhost.swaggerinfo.ProductDataDrivenTest.verifyProductAdded(ProductDataDrivenTest.java:48)
+
+createMultipleProducts(com.localhost.swaggerinfo.ProductDataDrivenTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at com.localhost.swaggerinfo.ProductDataDrivenTest.createMultipleProducts(ProductDataDrivenTest.java:38)
+
+updateProductInformation(com.localhost.swaggerinfo.ProductDataDrivenTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at com.localhost.swaggerinfo.ProductDataDrivenTest.updateProductInformation(ProductDataDrivenTest.java:58)
+
+deleteProductAndVerify(com.localhost.swaggerinfo.ProductDataDrivenTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at com.localhost.swaggerinfo.ProductDataDrivenTest.deleteProductAndVerify(ProductDataDrivenTest.java:66)
+

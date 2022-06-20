@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Requirements</title>
+    <link rel="shortcut icon" href="favicon.ico">
+
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+<!--[if IE 7]>
+<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">
+<![endif]--><!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Bootstrap -->
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script><link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.4/media/jqueryui/dataTables.jqueryui.css" rel="Stylesheet"/>
+<link type="text/css" href="css/tables.css" rel="stylesheet" />
+
+<script type="text/javascript" src="datatables/1.10.4/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.4/media/jqueryui/dataTables.jqueryui.min.js"></script><!-- jQplot -->
+<!--[if IE]>
+<script language="javascript" type="text/javascript" src="excanvas/3/excanvas.compiled.js"></script>
+<![endif]--><link rel="stylesheet" type="text/css" href="jqplot/1.0.8/jquery.jqplot.min.css"/>
+<script type="text/javascript" src="jqplot/1.0.8/jquery.jqplot.min.js"></script>
+<script type="text/javascript" src="jqplot/1.0.8/plugins/jqplot.pieRenderer.min.js"></script>
+
+
+
+
+    <script class="code" type="text/javascript">$(document).ready(function () {
+        var plot1 = $.jqplot('coverage_pie_chart', [
+            [
+                ['Passing', 25],
+                ['Pending', 0],
+                ['Ignored', 0],
+                ['Failing', 6],
+                ['Errors',  2],
+                ['Compromised',  0],
+                ['Untested',  0],
+            ]
+        ], {
+            gridPadding: {top: 0, bottom: 38, left: 0, right: 0},
+            seriesColors: [
+                '#30cb23',
+                '#a2f2f2',
+                '#eeeadd',
+                '#f8001f',
+                '#fc6e1f',
+                'fuchsia',
+                'darkgrey'],
+            seriesDefaults: {
+                renderer: $.jqplot.PieRenderer,
+                trendline: {show: false},
+                rendererOptions: {padding: 8, showDataLabels: true}
+            },
+            legend: {
+                show: true,
+                placement: 'outside',
+                rendererOptions: {
+                    numberRows: 3
+                },
+                location: 's',
+                marginTop: '15px'
+            },
+            series: [
+                {label: '25 requirements tested successfully'},
+                {label: '0 requirements pending'},
+                {label: '0} requirements skipped'},
+                {label: '6} requirements with failures'},
+                {label: '2} requirements with errors'},
+                {label: '0} requirements compromised'},
+                {label: '0} requirements untested'},
+            ]
+        });
+        // Results table
+        $('#test-results-table').DataTable({
+            "order": [
+                [ 1, "asc" ]
+            ],
+            "pageLength": 100,
+            "lengthMenu": [ [50, 100, 200, -1] , [50, 100, 200, "All"] ]
+        });
+
+        // Results table
+        $('#req-results-table').DataTable({
+            "order": [
+                [ 1, "asc" ]
+            ],
+            "pageLength": 100,
+            "lengthMenu": [ [50, 100, 200, -1] , [50, 100, 200, "All"] ]
+        });
+
+        $('#examples-table').DataTable({
+            "order": [
+                [2, "asc"]
+            ],
+            "pageLength": 25
+        });
+        $("#requirements-tabs").tabs();
+        $("#test-tabs").tabs();
+    })
+    ;
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".read-more-link").click(function () {
+                $(this).nextAll("div.read-more-text").toggle();
+                var isrc = $(this).find("img").attr('src');
+                if (isrc == 'images/plus.png') {
+                    $(this).find("img").attr("src", function () {
+                        return "images/minus.png";
+                    });
+                } else {
+                    $(this).find("img").attr("src", function () {
+                        return "images/plus.png";
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">Swagger</span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 20-06-2022 13:22</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="middlb">
+            <div class="table">
+
+                <div id="requirements-summary">
+                    <div id="coverage_pie_chart"
+                         style="margin-top:10px; margin-left:10px; width:250px; height:250px;"></div>
+                    <div id="coverage_summary">
+                        <div>
+                            <h4>Requirements Overview</h4>
+                            <table class="summary-table">
+                                <head>
+                                    <tr>
+                                        <th>Requirement Type</th>
+                                        <th>Total</th>
+                                        <th>Pass&nbsp;<i class="icon-check"></i></th>
+                                        <th>Fail&nbsp;<i class="icon-thumbs-down"></i></th>
+                                        <th>Pending&nbsp;<i class="icon-calendar"></i></th>
+                                        <th>Ignored&nbsp;<i class="icon-ban-circle"></i></th>
+                                    </tr>
+                                </head>
+                                <body>
+
+                                <tr>
+                                    <td class="summary-leading-column"><a href="#test-results-table">Acceptance Criteria (tests)</a></td>
+                                    <td>33</td>
+                                    <td>25</td>
+                                    <td>8</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td></td>
+                                </tr>
+                                </body>
+                            </table>
+                        </div>
+
+
+
+
+
+<div>
+    <h4>Test Result Summary</h4>
+    <table class="summary-table">
+        <head>
+            <tr>
+                <th>Test Type</th>
+                <th>Total</th>
+                <th>Pass&nbsp;<i class="icon-check"/> </th>
+                <th>Fail&nbsp;<i class="icon-thumbs-down"/></th>
+                <th>Pending&nbsp;<i class="icon-calendar"/></th>
+                <th>Ignore/Skip&nbsp;<i class="icon-ban-circle"/></th>
+            </tr>
+        </head>
+        <body>
+        <tr>
+            <td class="summary-leading-column">Automated</td>
+            <td>33</td>
+            <td>25 (76%)</td>
+            <td>8 (24%)</td>
+            <td>0 (0%)</td>
+            <td>0 (0%)</td>
+        </tr>
+        <tr>
+            <td class="summary-leading-column">Manual</td>
+            <td>0</td>
+            <td>0 (0%)</td>
+            <td>0 (0%)</td>
+            <td>0 (0%)</td>
+            <td>0 (0%)</td>
+        </tr>
+        <tr>
+            <td class="summary-leading-column">Total</td>
+            <td>33</td>
+            <td>25 (76%)</td>
+            <td>8 (24%)</td>
+            <td>0 (0%)</td>
+            <td>0 (0%)</td>
+        </tr>
+        <tr>
+            <td class="summary-leading-column">Total Duration</td>
+                <td colspan="5">3 seconds</td>
+        </tr>
+        </body>
+    </table>
+</div>
+                    </div>
+                </div>
+                <div class="clr"></div>
+
+                <div id="requirements-tabs">
+<table>
+    <tr>
+        <td>
+            <div><h3>Acceptance Criteria</h3></div>
+            <div id="test_list_tests" class="table">
+                <div class="test-results">
+                    <table id="test-results-table">
+                        <thead>
+                        <tr>
+                            <th width="50" class="test-results-heading">&nbsp;</th>
+                            <th width="%" class="test-results-heading">Tests</th>
+                            <th width="70" class="test-results-heading">Steps</th>
+
+                            <th width="100" class="test-results-heading">Started</th>
+                            <th width="100" class="test-results-heading">Took<br>(secs)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="28f92957ec645b6f8ace25a8a541f4326b05ca996eb87f5b7198bd94beed46e0.html" class="ellipsis"
+                                           title="I get all categories from application ">
+                                            I get all categories from application
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">5</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:22:57">13:22:57</td>
+
+                                <td class="SUCCESS-text">0.11</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="ee5043b4e9fbd85665c5a2160583cf2826e66694a5c06e295d0c8e16bee2ea20.html" class="ellipsis"
+                                           title="I create categories from application ">
+                                            I create categories from application
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">5</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:22:57">13:22:57</td>
+
+                                <td class="SUCCESS-text">0.09</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="303eac1b149d0619f1606b381e6fd671a2601b56c98c5911756794cd66d1a2ee.html" class="ellipsis"
+                                           title="I update categories from application ">
+                                            I update categories from application
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">7</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:22:57">13:22:57</td>
+
+                                <td class="SUCCESS-text">0.1</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="c6da51ce24175b3e19e4fc64c7c19b20c2e0689ca0443b0f55cdfdcbf2a36cfa.html" class="ellipsis"
+                                           title="I delete categories from application ">
+                                            I delete categories from application
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">8</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:22:57">13:22:57</td>
+
+                                <td class="SUCCESS-text">0.24</td>
+                            </tr>
+
+                            <tr class="test-ERROR">
+                                <td><span class="summary-icon"><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></span>
+                                    
+                                    <span style="display:none">ERROR</span></td>
+                                <td class="ERROR-text">
+                                    <div class="ellipsis">
+
+                                        <a href="e48792b49565f3d67544c519ad85033bbe4d05259f765f40f1613132c41b2df7.html" class="ellipsis"
+                                           title="Delete the category and verify if the category is deleted! Illegal argument exception: parameter...">
+                                            Delete the category and verify if the category is deleted!
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="ERROR-text">1</td>
+
+
+                                <td class="ERROR-text" data-sort="2022-06-20 13:23:00">13:23:00</td>
+
+                                <td class="ERROR-text">0.06</td>
+                            </tr>
+
+                            <tr class="test-ERROR">
+                                <td><span class="summary-icon"><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></span>
+                                    
+                                    <span style="display:none">ERROR</span></td>
+                                <td class="ERROR-text">
+                                    <div class="ellipsis">
+
+                                        <a href="bbf0934b188df7807199a477001d289d4a71554334c0ab9ed157310519142e18.html" class="ellipsis"
+                                           title="Verify if the category was added to the stock Illegal argument exception: parameter...">
+                                            Verify if the category was added to the stock
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="ERROR-text">1</td>
+
+
+                                <td class="ERROR-text" data-sort="2022-06-20 13:23:00">13:23:00</td>
+
+                                <td class="ERROR-text">0.01</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="8c54d619b4af6e5c7faa2f368731db38a0753b61f044962e6bfb295c0796551e.html" class="ellipsis"
+                                           title="This will create a new category ">
+                                            This will create a new category
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">2</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:23:00">13:23:00</td>
+
+                                <td class="SUCCESS-text">0.07</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="270a78d78ffa531092340534925892dcbec8eec7d9bc392875c9370effe9b32f.html" class="ellipsis"
+                                           title="Update the category information and verify updated categories ">
+                                            Update the category information and verify updated categories
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">4</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:23:00">13:23:00</td>
+
+                                <td class="SUCCESS-text">0.05</td>
+                            </tr>
+
+                            <tr class="test-FAILURE">
+                                <td><span class="summary-icon"><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></span>
+                                    
+                                    <span style="display:none">FAILURE</span></td>
+                                <td class="FAILURE-text">
+                                    <div class="ellipsis">
+
+                                        <a href="7ddff3a34e6e50d08b6cf4512cc028923208d6730aeb7e8507f4020653b89190.html" class="ellipsis"
+                                           title="Verify if the service was added to the stock Assertion error: 1 expectation failed...">
+                                            Verify if the service was added to the stock
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="FAILURE-text">2</td>
+
+
+                                <td class="FAILURE-text" data-sort="2022-06-20 13:23:00">13:23:00</td>
+
+                                <td class="FAILURE-text">0.08</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="c946fc443439cb5aa41595fe79489f45a4dbc1f292c49bdfd9767dc2471e89a1.html" class="ellipsis"
+                                           title="This will create a new Service ">
+                                            This will create a new Service
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">2</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:23:00">13:23:00</td>
+
+                                <td class="SUCCESS-text">0.08</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="4c756d62a213ed18c69df0b86423534e0739df2158ca7aaad0d54adfcbf27399.html" class="ellipsis"
+                                           title="Delete the service and verify if the service is deleted! ">
+                                            Delete the service and verify if the service is deleted!
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">4</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:23:00">13:23:00</td>
+
+                                <td class="SUCCESS-text">0.09</td>
+                            </tr>
+
+                            <tr class="test-FAILURE">
+                                <td><span class="summary-icon"><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></span>
+                                    
+                                    <span style="display:none">FAILURE</span></td>
+                                <td class="FAILURE-text">
+                                    <div class="ellipsis">
+
+                                        <a href="7c450edb6152bfa9be599c0856af5984ee00824efda07de65073b71827f3048b.html" class="ellipsis"
+                                           title="Update the service information and verify updated services Assertion error: 1 expectation failed...">
+                                            Update the service information and verify updated services
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="FAILURE-text">4</td>
+
+
+                                <td class="FAILURE-text" data-sort="2022-06-20 13:23:00">13:23:00</td>
+
+                                <td class="FAILURE-text">0.07</td>
+                            </tr>
+
+                            <tr class="test-FAILURE">
+                                <td><span class="summary-icon"><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></span>
+                                    
+                                    <span style="display:none">FAILURE</span></td>
+                                <td class="FAILURE-text">
+                                    <div class="ellipsis">
+
+                                        <a href="830d10c66261dc5455ad625ebf2a366a33707df1b8dca10ccd2aa7e1bb7db7ed.html" class="ellipsis"
+                                           title="Delete the store and verify if the store is deleted! 1 expectation failed. Expected status...">
+                                            Delete the store and verify if the store is deleted!
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="FAILURE-text">2</td>
+
+
+                                <td class="FAILURE-text" data-sort="2022-06-20 13:23:00">13:23:00</td>
+
+                                <td class="FAILURE-text">0.02</td>
+                            </tr>
+
+                            <tr class="test-FAILURE">
+                                <td><span class="summary-icon"><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></span>
+                                    
+                                    <span style="display:none">FAILURE</span></td>
+                                <td class="FAILURE-text">
+                                    <div class="ellipsis">
+
+                                        <a href="265fb8feb637380f0cc48fb6dd234bc1eccba7c3e38d2a2bd17730bedec3608c.html" class="ellipsis"
+                                           title="Verify if the store was added to the stock Assertion error: 1 expectation failed...">
+                                            Verify if the store was added to the stock
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="FAILURE-text">2</td>
+
+
+                                <td class="FAILURE-text" data-sort="2022-06-20 13:23:00">13:23:00</td>
+
+                                <td class="FAILURE-text">0.02</td>
+                            </tr>
+
+                            <tr class="test-FAILURE">
+                                <td><span class="summary-icon"><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></span>
+                                    
+                                    <span style="display:none">FAILURE</span></td>
+                                <td class="FAILURE-text">
+                                    <div class="ellipsis">
+
+                                        <a href="82fe679277035deecee5d2ec9b5d354ebd5957fcee03c61915a3b6b69a0e3aea.html" class="ellipsis"
+                                           title="Update the store information and verify updated information 1 expectation failed. Expected status...">
+                                            Update the store information and verify updated information
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="FAILURE-text">2</td>
+
+
+                                <td class="FAILURE-text" data-sort="2022-06-20 13:23:00">13:23:00</td>
+
+                                <td class="FAILURE-text">0.03</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="e4a3d7686898f79bd2dac301d356f060f8a9613a5736cb0402172b86f65dec64.html" class="ellipsis"
+                                           title="This will create a new store ">
+                                            This will create a new store
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">2</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:23:00">13:23:00</td>
+
+                                <td class="SUCCESS-text">0.04</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="04fc439a3d6707f81455f92f57a23b37c67b3c01d0f5620127064a00dd8d642b.html" class="ellipsis"
+                                           title="This will give healthcheck information ">
+                                            This will give healthcheck information
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">2</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:23:01">13:23:01</td>
+
+                                <td class="SUCCESS-text">0.1</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="8ced7de3f6cbf0e4733821bcb35d0278e52c1eaa4dd8509a48f8f811b2991a59.html" class="ellipsis"
+                                           title="This will give version information ">
+                                            This will give version information
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">2</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:23:01">13:23:01</td>
+
+                                <td class="SUCCESS-text">0.01</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="0092084cbd33e3ba318d3d5ce1df3260b6d3ba27b34fb4360d6c1ff49451e830.html" class="ellipsis"
+                                           title="I get all products from application ">
+                                            I get all products from application
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">5</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:22:57">13:22:57</td>
+
+                                <td class="SUCCESS-text">0.38</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="15f52f181313881a2591efccb29a7316100a117341458d60191b7fde2069edc4.html" class="ellipsis"
+                                           title="I create product from application ">
+                                            I create product from application
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">5</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:22:58">13:22:58</td>
+
+                                <td class="SUCCESS-text">0.04</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="4bbd78c7983f4447ddc2ab21493f48f98b105759728d5b62d27bc759556e48f1.html" class="ellipsis"
+                                           title="I update product from application ">
+                                            I update product from application
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">7</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:22:58">13:22:58</td>
+
+                                <td class="SUCCESS-text">0.05</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="ff1f196351368aa0c2611c49525a80020ca8299d098b29b5021748e270566d30.html" class="ellipsis"
+                                           title="I delete product from application ">
+                                            I delete product from application
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">8</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:22:58">13:22:58</td>
+
+                                <td class="SUCCESS-text">0.04</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="cf8f0096fa21bf2fa1d760f44511212c9bdd29423fa988b2e1c6013a4d676501.html" class="ellipsis"
+                                           title="I get all services from application ">
+                                            I get all services from application
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">5</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:22:58">13:22:58</td>
+
+                                <td class="SUCCESS-text">0.03</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="daf2bb14d99ac13dd3afd3f264890e766c262a646ac3747b807e838d54102e25.html" class="ellipsis"
+                                           title="I create service from application ">
+                                            I create service from application
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">5</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:22:58">13:22:58</td>
+
+                                <td class="SUCCESS-text">0.07</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="694e233473250d5cf59b9688a1997fd540cdf1376d08b1467c7cc5161ee93281.html" class="ellipsis"
+                                           title="I update service from application ">
+                                            I update service from application
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">7</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:22:58">13:22:58</td>
+
+                                <td class="SUCCESS-text">0.08</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="68cb907895ffed0ceda0b42369f28a64e4c67e292d89d54290d0a81a8bd8012c.html" class="ellipsis"
+                                           title="I delete service from application ">
+                                            I delete service from application
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">8</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:22:58">13:22:58</td>
+
+                                <td class="SUCCESS-text">0.07</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="43dca88135de95bcd637e1fc958bc4b27ee40a00b809b42efb0bf8823220f9a6.html" class="ellipsis"
+                                           title="I get all stores from application ">
+                                            I get all stores from application
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">5</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:22:58">13:22:58</td>
+
+                                <td class="SUCCESS-text">0.06</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="c970f94a9774dca316ef7258ca7cda9b6eeb3f7dc84d68792c276ff8d4f4e408.html" class="ellipsis"
+                                           title="I create store from application ">
+                                            I create store from application
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">5</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:22:59">13:22:59</td>
+
+                                <td class="SUCCESS-text">0.07</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="9bf2c000696eb510983ab3d5692c28253e25186942e8b4b0ce0ebe937b02530d.html" class="ellipsis"
+                                           title="I update store from application ">
+                                            I update store from application
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">7</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:22:59">13:22:59</td>
+
+                                <td class="SUCCESS-text">0.12</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="a7de49fb0afe1f399bd95b9339b88f10fd1ca93cc1087d369c202a5f8eec9d54.html" class="ellipsis"
+                                           title="I delete store from application ">
+                                            I delete store from application
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">8</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:22:59">13:22:59</td>
+
+                                <td class="SUCCESS-text">0.09</td>
+                            </tr>
+
+                            <tr class="test-FAILURE">
+                                <td><span class="summary-icon"><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></span>
+                                    
+                                    <span style="display:none">FAILURE</span></td>
+                                <td class="FAILURE-text">
+                                    <div class="ellipsis">
+
+                                        <a href="d8ef321fe6b95bf1c6ef29cd8a530761e927a4a04e08689413bbdf961c720b0d.html" class="ellipsis"
+                                           title="I verify following data response Assertion error: 1 expectation failed...">
+                                            I verify following data response
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="FAILURE-text">16</td>
+
+
+                                <td class="FAILURE-text" data-sort="2022-06-20 13:22:59">13:22:59</td>
+
+                                <td class="FAILURE-text">0.12</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="4c02a7de832ee49f0f0291bb8a2878a5f02e4a0b93c26b222c60f875eb41989a.html" class="ellipsis"
+                                           title="I get  heathCheck of application ">
+                                            I get  heathCheck of application
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">4</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:22:59">13:22:59</td>
+
+                                <td class="SUCCESS-text">0.06</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="c0b5720860fb99f7ecba5d55b4fa11a77eea2eecfdfc201605499b199783261a.html" class="ellipsis"
+                                           title="I get version of application ">
+                                            I get version of application
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">4</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2022-06-20 13:22:59">13:22:59</td>
+
+                                <td class="SUCCESS-text">0.02</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 1.5.1</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Categories data driven test","Delete the category and verify if the category is deleted!","ERROR","2022-06-20T13:23:00.171+01:00[Europe/London]","0.0","0.06"
+"Categories data driven test","Verify if the category was added to the stock","ERROR","2022-06-20T13:23:00.231+01:00[Europe/London]","0.0","0.01"
+"Categories data driven test","This will create a new category","SUCCESS","2022-06-20T13:23:00.247+01:00[Europe/London]","0.0","0.07"
+"Categories data driven test","Update the category information and verify updated categories","SUCCESS","2022-06-20T13:23:00.316+01:00[Europe/London]","0.0","0.05"

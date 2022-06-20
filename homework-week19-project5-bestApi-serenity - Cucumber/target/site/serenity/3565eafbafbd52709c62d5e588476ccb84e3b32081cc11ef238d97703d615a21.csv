@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Testing different request on the utility","I get  heathCheck of application","SUCCESS","2022-06-20T13:22:59.811+01:00[Europe/London]","0.0","0.06"
+"Testing different request on the utility","I get version of application","SUCCESS","2022-06-20T13:22:59.943+01:00[Europe/London]","0.0","0.02"

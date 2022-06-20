@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+Test set: com.localhost.swaggerinfo.ServiceDataDrivenTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.333 sec <<< FAILURE! - in com.localhost.swaggerinfo.ServiceDataDrivenTest
+verifyServiceAdded(com.localhost.swaggerinfo.ServiceDataDrivenTest)  Time elapsed: 0.054 sec  <<< FAILURE!
+java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> but was <404>.
+
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:636)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:122)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:130)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
+	at com.localhost.swaggerinfo.ServicesSteps.getserviceInfoByID(ServicesSteps.java:32)
+	at com.localhost.swaggerinfo.ServiceDataDrivenTest.verifyServiceAdded(ServiceDataDrivenTest.java:39)
+
+updateServiceInformation(com.localhost.swaggerinfo.ServiceDataDrivenTest)  Time elapsed: 0.068 sec  <<< FAILURE!
+java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> but was <404>.
+
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:636)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:122)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:130)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
+	at com.localhost.swaggerinfo.ServicesSteps.getserviceInfoByID(ServicesSteps.java:32)
+	at com.localhost.swaggerinfo.ServiceDataDrivenTest.updateServiceInformation(ServiceDataDrivenTest.java:50)
+

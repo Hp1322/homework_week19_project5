@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="2" failures="0" name="com.localhost.swaggerinfo.CategoriesDataDrivenTest" skipped="0" tests="4" time="0.19" timestamp="2022-06-20T13:23:00.171+01:00[Europe/London]"><testcase classname="com.localhost.swaggerinfo.CategoriesDataDrivenTest" name="Delete the category and verify if the category is deleted!"><error message="parameterValue cannot be null" type="java.lang.IllegalArgumentException">parameterValue cannot be null</error><system-err>parameterValue cannot be null&#13;
+io.restassured.internal.assertion.AssertParameter.notNull(AssertParameter.groovy:26)&#13;
+io.restassured.internal.RequestSpecificationImpl.pathParameter(RequestSpecificationImpl.groovy:560)&#13;
+groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)&#13;
+groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1213)&#13;
+groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)&#13;
+groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)&#13;
+io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)&#13;
+io.restassured.internal.RequestSpecificationImpl.pathParam(RequestSpecificationImpl.groovy:578)&#13;
+net.serenitybdd.rest.decorators.request.RequestSpecificationParametersConfigurations.pathParam(RequestSpecificationParametersConfigurations.java:188)&#13;
+net.serenitybdd.rest.decorators.request.RequestSpecificationDecorated.pathParam(RequestSpecificationDecorated.java:27)&#13;
+com.localhost.swaggerinfo.CategoriesSteps.deleteCategory(CategoriesSteps.java:54)&#13;
+com.localhost.swaggerinfo.CategoriesDataDrivenTest.deleteCategoryAndVerify(CategoriesDataDrivenTest.java:58)&#13;
+</system-err></testcase><testcase classname="com.localhost.swaggerinfo.CategoriesDataDrivenTest" name="Verify if the category was added to the stock"><error message="parameterValue cannot be null" type="java.lang.IllegalArgumentException">parameterValue cannot be null</error><system-err>parameterValue cannot be null&#13;
+io.restassured.internal.assertion.AssertParameter.notNull(AssertParameter.groovy:26)&#13;
+io.restassured.internal.RequestSpecificationImpl.pathParameter(RequestSpecificationImpl.groovy:560)&#13;
+groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)&#13;
+groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1213)&#13;
+groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)&#13;
+groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)&#13;
+io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)&#13;
+io.restassured.internal.RequestSpecificationImpl.pathParam(RequestSpecificationImpl.groovy:578)&#13;
+net.serenitybdd.rest.decorators.request.RequestSpecificationParametersConfigurations.pathParam(RequestSpecificationParametersConfigurations.java:188)&#13;
+net.serenitybdd.rest.decorators.request.RequestSpecificationDecorated.pathParam(RequestSpecificationDecorated.java:27)&#13;
+com.localhost.swaggerinfo.CategoriesSteps.getCategoryInfoByID(CategoriesSteps.java:30)&#13;
+com.localhost.swaggerinfo.CategoriesDataDrivenTest.verifyCategoryAdded(CategoriesDataDrivenTest.java:40)&#13;
+</system-err></testcase><testcase classname="com.localhost.swaggerinfo.CategoriesDataDrivenTest" name="This will create a new category"/><testcase classname="com.localhost.swaggerinfo.CategoriesDataDrivenTest" name="Update the category information and verify updated categories"/></testsuite>
